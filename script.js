@@ -1,12 +1,12 @@
 'use stict';
 
-//task 1
+// task 1
 
 let value = prompt('Введите число');
 
-while (isNaN(value) || !Number.isInteger(+value) || value.trim() === "" || +value < 0) {
-  console.log("Incorrect input!");
-  value = prompt("Введите число");
+while (isNaN(value) || !Number.isInteger(+value) || value.trim() === '' || +value < 0) {
+  console.log('Incorrect input!');
+  value = prompt('Введите число');
 }
 
 const num = parseInt(value);
