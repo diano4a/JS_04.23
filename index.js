@@ -36,3 +36,17 @@ function makeDeepCopy(obj) {
   return objCopy;
 }
 
+function selectFromInterval(arr, firstIntValue, secondIntValue) {
+  if (!Array.isArray(arr) || arr.some(isNaN) || arr.some(el => typeof el !== 'number') ||
+    isNaN(firstIntValue) || isNaN(secondIntValue) || arr.length === 0) {
+    throw new Error();
+  }
+
+  const start = Math.min(firstIntValue, secondIntValue);
+  const end = Math.max(firstIntValue, secondIntValue);
+
+  const resultArr = arr.filter((el) => el >= start && el <= end);
+
+  return resultArr;
+}
+
