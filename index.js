@@ -50,3 +50,26 @@ function selectFromInterval(arr, firstIntValue, secondIntValue) {
   return resultArr;
 }
 
+function createIterable(from, to) {
+
+  if (isNaN(from) || isNaN(to) || to <= from) {
+    throw new Error();
+  }
+
+
+  const iterable = {
+    [Symbol.iterator]: function() {
+      return {
+        next() {
+          if (from <= to) {
+            return { value: from++, done: false };
+          } else {
+            return { done: true };
+          }
+        }
+      };
+    }
+  };
+
+  return iterable;
+}
