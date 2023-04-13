@@ -12,3 +12,17 @@ Array.prototype.customFilter = function(callback, thisArg) {
   return filteredArr;
 };
 
+function createDebounceFunction(callback, delay) {
+  let timer;
+
+  return function (...args) {
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    timer = setTimeout(() => {
+      callback.apply(this, args);
+    }, delay);
+  };
+}
+
