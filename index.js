@@ -62,3 +62,43 @@ class Calculator {
     return this.X / this.Y;
   }
 }
+
+class RickAndMorty {
+  constructor() {
+    this.API_URL = 'https://rickandmortyapi.com/api/';
+  }
+
+  getCharacter(charId) {
+    const url = `${this.API_URL}character/${charId}`;
+
+    return fetch(url)
+      .then((response) => {
+        if (response.status === 200) {
+          return response.json();
+        } else {
+          return null;
+        }
+      })
+      .catch((error) => {
+        console.log('Error');
+        throw new Error('Problem with fetching character');
+      });
+  }
+
+  async getEpisode(episodeId) {
+    const url = `${this.API_URL}episode/${episodeId}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      if (response.status === 200) {
+        return data;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.log('Error');
+      throw new Error('Problem with fetching episode');
+    }
+  }
+}
