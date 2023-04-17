@@ -80,8 +80,7 @@ class RickAndMorty {
         }
       })
       .catch((error) => {
-        console.log('Error');
-        throw new Error('Problem with fetching character');
+        throw new Error('');
       });
   }
 
@@ -97,8 +96,7 @@ class RickAndMorty {
         return null;
       }
     } catch (error) {
-      console.log('Error');
-      throw new Error('Problem with fetching episode');
+      throw new Error('');
     }
   }
 }
