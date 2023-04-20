@@ -69,3 +69,72 @@ class Stack {
     return stack;
   }
 }
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  append(elem) {
+    const newNode = { value: elem, next: null };
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+  }
+
+  prepend(elem) {
+    const newNode = { value: elem, next: null };
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+  }
+
+  find(elem) {
+    let currentNode = this.head;
+    while (currentNode) {
+      if (currentNode.value === elem) {
+        return currentNode.value;
+      } else {
+        currentNode = currentNode.next;
+      }
+    }
+    return null;
+  }
+
+  toArray() {
+    const arr = [];
+    let arrSize = 0;
+    let currentNode = this.head;
+    while (currentNode) {
+      arr[arrSize] = currentNode.value;
+      arrSize++;
+      currentNode = currentNode.next;
+    }
+    return arr;
+  }
+
+  static fromIterable(iterable) {
+    if (typeof iterable[Symbol.iterator] !== 'function') {
+      throw new Error('Not iterable');
+    }
+    const linkedList = new LinkedList();
+    for (const el of iterable) {
+      linkedList.append(el);
+    }
+    return linkedList;
+  }
+
+}
+
