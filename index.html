@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Calculator</title>
+</head>
+<body>
+  <div class="calculator">
+
+    <form>
+      <div class="display">
+      <input type="text" id="display" readonly maxlength="16">
+      </div>
+
+      <div class="keypad">
+       
+        <div class="row">
+          <button value="C" class="operator clear">C</button>
+          <button value="+/-" class="operator">+/-</button>
+          <button value="DEL" class="operator del">DEL</button>
+          <button value="/" class="operator">/</button>
+        </div>
+        <div class="row">
+          <button value="7">7</button>
+          <button value="8">8</button>
+          <button value="9">9</button>
+          <button value="*" class="operator">x</button>
+        </div>
+        <div class="row">
+          <button value="4">4</button>
+          <button value="5">5</button>
+          <button value="6">6</button>
+          <button value="-" class="operator">-</button>
+        </div>
+        <div class="row">
+          <button value="1">1</button>
+          <button value="2">2</button>
+          <button value="3">3</button>
+          <button value="+" class="operator">+</button>
+        </div>
+        <div class="row">
+          <button value="0">0</button>
+          <button value=".">.</button>
+          <button value="=" class="operator equal">=</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <script src="calc.js"></script>
+  
+</body>
+</html>
